@@ -1,0 +1,6 @@
+.rigthToLeft {
+  direction: rtl;
+}
+.textRight {
+  text-align: right;
+}

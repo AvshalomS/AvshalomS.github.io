@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./bootstrap4/bootstrap-4.5.2.css">
+  <link rel="stylesheet" href="./styles.css">
   <script src="./bootstrap4/jquery-3.5.1-jquery.js"></script>
   <script src="./bootstrap4/popper-1.16.0.js"></script>
   <script src="./bootstrap4/bootstrap-4.5.2.js"></script>
@@ -13,8 +14,11 @@
 
 <body>
 
-  <div class="jumbotron text-center" style="background-color: #76ff03;">
-    <h1>Avshaloms projects</h1>
+  <div class="container" style="padding:1%">
+    <!-- <div class="jumbotron text-center" style="background-color: #76ff03;  opacity: 0.7;"> -->
+    <div class="jumbotron text-center" style="opacity: 0.7;">
+      <h1>Avshaloms projects</h1>
+    </div>
   </div>
 
   <div class="container">
@@ -22,9 +26,26 @@
       <!-- Card project 1 -->
       <div class="col mb-4">
         <div class="card text-white  h-100" style="background-color: #81d4fa;">
-          <div class="card-header">Taskboard - לוח משימות</div>
-          <div class="card-body">
-            <h5 class="card-title">Taskboard</h5>
+          <!--  <div class="card-header">Taskboard</div> -->
+          <div class="card-header text-center">לוח משימות</div>
+          <div class="card-body rigthToLeft textRight">
+            <h5 class="card-title">לוח משימות</h5>
+
+            <h6 class="card-title">אודות הפרוייקט</h6>
+            <ul>
+              <li>בפרוייקט זה ניתן להוסיף משימות פשוטות ללוח.</li>
+              <li>כל משימה מכילה תיאור וזמן יעד לביצוע.</li>
+              <li> המשתמש ימלא את פרטי המשימה בטופס, ולאחר לחיצה על לחצן הוספה, המשימה תתוסף אל לוח המשימות.</li>
+              <li> המשימות נשמרות ב Local Storage של הדפדפן בפורמט JSON.</li>
+            </ul>
+
+            <h6>טכנלוגיות</h6>
+            <ul>
+              <li>HTML5, CSS3, Bootstrap.</li>
+              <li>ביצוע DOM Manipulattions.</li>
+              <li>שימוש ב JSON, Glyph Icon, Fade-In, hover.</li>
+            </ul>
+
           </div>
           <div class="card-footer">
             <div class="row">
@@ -32,7 +53,7 @@
                 <a href="./project-1-Taskboard/index.html" class="btn btn-primary btn-block">View project</a>
               </div>
               <div class="col">
-                <a href="./project-1-Taskboard/index.html" class="btn btn-info btn-block">Go GitHub</a>
+                <a href="./project-1-Taskboard/index.html" class="btn btn-info btn-block">GitHub</a>
               </div>
             </div>
           </div>
@@ -52,7 +73,7 @@
                 <a href="./project-2-Cryptonite/index.html" class="btn btn-primary btn-block">View project</a>
               </div>
               <div class="col">
-                <a href="./project-2-Cryptonite/index.html" class="btn btn-info btn-block">Go GitHub</a>
+                <a href="./project-2-Cryptonite/index.html" class="btn btn-info btn-block">GitHub</a>
               </div>
             </div>
           </div>
