@@ -2,8 +2,8 @@
 // jQuery-AJAX API Project 
 //       Cryptonite
 // Written by: Shahar Avshalom
-// Version: 1.0
-// May 2019 Petah-Tikva ISRAEL
+// Version: 1.1
+// January 2021 Petah-Tikva ISRAEL
 //------------------------------------------------------------------------------------------------------
 
 
@@ -72,16 +72,18 @@ $(document).ready(function () {
         $(`#liveReportsContainer`).hide();
         $(`#aboutContainer`).show();
     });
-    $("#btnSearch").on("click", function () {
-
-        clearInterval(intervalID);
-        let searchResult = $(`#txtInput`).val();
-        if ($(`#txtInput`).val() == "" || $(`#txtInput`).val() == undefined) {
-            $(`.card`).show();
+    $("#searchInput").on("input", () => {
+        const toSearch = $(`#searchInput`).val();
+        if (toSearch == "" || toSearch == undefined) {
+            $(`#homePage`).html(``);
+            allCoinsList.filter((coin) => createHtmlCoinCard(coin))
         }
         else {
-            $(`.card`).hide();
-            $(`.${searchResult}`).show();
+            $(`#homePage`).html(``);
+            allCoinsList.filter((coin) => {
+                coin.search = coin.id.toLowerCase() + coin.symbol.toLowerCase()
+                if (coin.search.includes(toSearch.toLowerCase())) createHtmlCoinCard(coin)
+            })
         }
     });
 

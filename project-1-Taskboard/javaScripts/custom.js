@@ -19,7 +19,6 @@ var Tasks; // Object
 // inner HTML variables 
 var output = "";
 
-
 // Core Functions ------------------------------------------------------------------------------------
 
 function init() {
