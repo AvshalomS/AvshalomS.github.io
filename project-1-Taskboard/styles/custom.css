@@ -32,14 +32,6 @@ html {
   padding: 30px;
 }
 
-/* Hebrew */
-.rigthToLeft {
-  direction: rtl;
-}
-.textRight {
-  text-align: right;
-}
-
 /* Tasks CSS ---------------------------------------------------------------------------------------- */
 #Display {
   margin: 10px;

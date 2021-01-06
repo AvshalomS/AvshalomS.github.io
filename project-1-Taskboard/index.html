@@ -15,12 +15,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="styles/bootstrap-4.3.1.min.css">
+  <link rel="stylesheet" href="./bootstrap/bootstrap-4.3.1.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles/custom.css">
+  <link rel="stylesheet" href="./styles/custom.css">
 
-  <title>My Task Board</title>
+  <title class="myTaskBoard">My Task Board</title>
 </head>
 
 <body onload="init()">
@@ -38,18 +38,16 @@
 
         <!-- Board Title -->
         <div class="container" style="padding:1%">
-          <div class="jumbotron text-center rigthToLeft textRight" style="opacity: 0.7;">
-            <h1>My Task Board</h1>
-            <!-- <h7>האתר ניתן לשימוש חופשי ללא כל הגבלה וללא תשלום</h7><br>
-            <h7>אנא כבדו אותי והמנעו משימוש באתר בשבת (האתר שומר שבת)</h7> -->
+          <div class="jumbotron text-center" style="opacity: 0.7;">
+            <h1 class="myTaskBoard">My Task Board</h1>
           </div>
         </div>
 
         <!-- Back button -->
         <nav class="navbar navbar-light bg-light">
-          <!-- <a class="navbar-brand">TB</a> -->
           <i class="far fa-clipboard"></i>
-          <a href="https://avshaloms.github.io" class="btn btn-info float-right">Back to Avshalom's projects</a>
+          <a id="backToAvshalomsProjects" href="https://avshaloms.github.io" class="btn btn-info float-right">Back to
+            Avshaloms projects</a>
         </nav>
 
         <div class="bgForm">
@@ -58,7 +56,6 @@
           <form action="#" onsubmit="return addTask()">
 
             <div class="form-group">
-              <!-- <input type="text" class="form-control" id="myTaskTitle" placeholder="Task title" required> -->
               <textarea class="form-control" id="myTaskTitle" placeholder="Task title" required></textarea>
             </div>
 
@@ -73,10 +70,10 @@
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <button type="submit" class="btn btn-success btn-lg btn-block">Add Task</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block" id="addTaskBtn">Add Task</button>
               </div>
               <div class="form-group col-md-6">
-                <button type="reset" class="btn btn-info btn-lg btn-block">Reset Task</button>
+                <button type="reset" class="btn btn-info btn-lg btn-block" id="resetTaskBtn">Reset Task</button>
               </div>
             </div>
 
@@ -86,7 +83,15 @@
         <!-- Form Area End. -->
       </div>
       <!-- Indenting the right side -->
-      <div class="col-sm-2"></div>
+      <div class="col-sm-2">
+        <div style="padding: 5%; text-align: center;">
+          <label for="cars" id="chooseLanguage">Choose a language:</label>
+          <select class="form-control" name="language" id="htmlLanguage" onchange="changeLanguage()">
+            <option value="Hebrew">עברית</option>
+            <option value="English">English</option>
+          </select>
+        </div>
+      </div>
 
     </div>
 
@@ -100,14 +105,11 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="javaScripts/jquery-3.3.1.slim.min.js"></script>
-    <script src="javaScripts/bootstrap-4.3.1.min.js"></script>
+    <script src="./bootstrap/jquery-3.3.1.slim.min.js"></script>
+    <script src="./bootstrap/bootstrap-4.3.1.min.js"></script>
 
     <!-- Custom JS -->
-    <script type="module" src="./node_modules/@hebcal/core/dist/bundle.js"></script>
-    <script type="mogule" src="./node_modules/@hebcal/core/dist/index.js"></script>
-    <script type="mogule" src="./node_modules/@hebcal/core/dist/index.mjs"></script>
-    <script src="javaScripts/custom.js"></script>
+    <script src="./javaScripts/custom.js"></script>
 
   </div>
 

@@ -1,8 +1,8 @@
 //------------------------------------------------------------------------------------------------------
 // My Task Board 
 // Written by: Shahar Avshalom
-// Version: 1.0
-// March 2019
+// Version: 1.1
+// January 2021
 //------------------------------------------------------------------------------------------------------
 
 // Global variables ------------------------------------------------------------------------------------
@@ -19,11 +19,13 @@ var Tasks; // Object
 // inner HTML variables 
 var output = "";
 
+
 // Core Functions ------------------------------------------------------------------------------------
 
 function init() {
 
-    // init Tasks
+    // init Language & Tasks
+    initLanguage();
     getTasksFromLocalStorage();
 
     // init Date and Time
@@ -108,6 +110,16 @@ function setTasksToLocalStorage() {
     localStorage.setItem("savedTasks", tasksJSON);
 }
 
+function getLanguageFromLocalStorage() {
+    tasksJSON = localStorage.getItem("taskBoardLanguage") == null ? JSON.stringify([]) : localStorage.getItem("taskBoardLanguage");
+    return JSON.parse(tasksJSON)
+}
+
+function setLanguageToLocalStorage(language) {
+    jsonToSave = JSON.stringify(language);
+    localStorage.setItem("taskBoardLanguage", jsonToSave);
+}
+
 
 // Date and Time Functions -----------------------------------------------------------------------------
 
@@ -139,3 +151,43 @@ function pad(str, max) {
 }
 
 // End ------------------------------------------------------------------------------------------------- 
+
+async function initLanguage() {
+    const LanguageFromLocalStorage = getLanguageFromLocalStorage();
+    await LanguageFromLocalStorage !== [] ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "Hebrew";
+    changeLanguage()
+}
+
+
+function changeLanguage() {
+
+    const len = document.getElementById("htmlLanguage").value
+    document.getElementsByClassName("myTaskBoard")[0].innerText = dictionary[len]['myTaskBoard']
+    document.getElementsByClassName("myTaskBoard")[1].innerText = dictionary[len]['myTaskBoard']
+    document.getElementById("chooseLanguage").innerText = dictionary[len]['chooseLanguage']
+    document.getElementById("backToAvshalomsProjects").innerText = dictionary[len]['backToAvshalomsProjects']
+    document.getElementById("myTaskTitle").setAttribute("placeholder", `${dictionary[len]['taskTitle']}`)
+    document.getElementById("addTaskBtn").innerText = dictionary[len]['addTaskBtn']
+    document.getElementById("resetTaskBtn").innerText = dictionary[len]['resetTaskBtn']
+    setLanguageToLocalStorage(len)
+
+}
+
+const dictionary = {
+    Hebrew: {
+        myTaskBoard: "לוח המשימות שלי",
+        chooseLanguage: "בחר שפה",
+        backToAvshalomsProjects: "חזור לפרוייקטים של אבשלום",
+        taskTitle: "תיאור המשימה",
+        addTaskBtn: "הוסף משימה",
+        resetTaskBtn: "אפס משימה"
+    },
+    English: {
+        myTaskBoard: "My Task Board",
+        chooseLanguage: "Choose a language:",
+        backToAvshalomsProjects: "Back to Avshaloms projects",
+        taskTitle: "Task title",
+        addTaskBtn: "Add Task",
+        resetTaskBtn: "Reset Task"
+    }
+}
