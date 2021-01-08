@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Avshaloms projects</title>
+  <title class="title"></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./bootstrap4/bootstrap-4.5.2.css">
@@ -17,18 +17,30 @@
 
 </head>
 
-<body>
+<body onload="initLanguage()">
 
   <div class="container" style="padding:1%">
-    <!-- <div class="jumbotron text-center" style="background-color: #76ff03;  opacity: 0.7;"> -->
     <div class="jumbotron text-center" style="opacity: 0.7;">
-      <h1>Avshalom's projects</h1>
+      <h1 class="title"></h1>
 
       <!-- HolyClock.com <BODY> code -->
       <script>document.write(typeof _holyclock_tag == "string" ? _holyclock_tag : 'HolyClock \x26lt;head\x26gt; tag missing!');</script>
       <!-- HolyClock.com <BODY> code -->
 
     </div>
+
+    <!-- Localization navbar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="./Logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+      <form class="form-inline">
+        <select class="form-control" name="language" id="htmlLanguage" onchange="changeLanguage()">
+          <option value="Hebrew">עברית</option>
+          <option value="English">English</option>
+        </select>
+      </form>
+    </nav>
+
   </div>
 
   <div class="container">
@@ -37,21 +49,15 @@
       <!-- Card project 2 -->
       <div class="col mb-4">
         <div class="card text-white  h-100 cardBackground">
-          <!-- <div class="card-header">Cryptonite</div> -->
-          <div class="card-header text-center">מטבעות וירטואליים</div>
-          <div class="card-body rigthToLeft textRight">
-            <h5 class="card-title text-center">מטבעות וירטואליים jQuery-AJAX RESTful API</h5>
-            <h6 class="card-title">אודות הפרוייקט</h6>
+          <div class="card-header text-center" id="cryptoniteHeader"></div>
+          <div class="card-body textDirection">
+            <h5 class="card-title text-center" id="cryptoniteTitle"></h5>
+            <h6 class="card-title about"></h6>
             <ul>
-              <li>מטרת הפרויקט להנגיש מידע מעולם הסחר הווירטואלי.</li>
-              <li><b>דף הבית</b> מכיל כרטיסי מידע על מטבעות וירטואליים <small>(בלחיצה על <b>More info</b> תתבצע קריאה
-                  חדשה לקבלת מידע
-                  מהשרת
-                  רק אם עברו יותר משתי דקות מהקריאה האחרונה)</small>.</li>
-              <li><b>לחיצה על כפתור <em>Chart</em></b> תוסיף את המטבע לדוחות זמן אמת, <small>(ניתן לבחור עד 5
-                  מטבעות)</small>.
-              </li>
-              <li><b>מסך <em>Live Report</em></b> מכיל גרף זמן אמת של שערי המטבעות שנבחרו.</li>
+              <li id="cryptoniteLine1"></li>
+              <li id="cryptoniteLine2"></li>
+              <li id="cryptoniteLine3"></li>
+              <li id="cryptoniteLine4"></li>
               <!-- <li><b>דפדפן כרום:</b> לחיצה על שלושת הנקודות <small>(צד שמאל למעלה)</small> בחירת כלים נוספים, יצירת מקש
                 קיצור - תיצור קיצור דרך
                 לפרוייקט על שולחן העבודה במחשב <small>(או מסך הבית בטלפון)</small>.</li>
@@ -59,11 +65,11 @@
                 <small>(בתחתית הדפדפן)</small> ובחירת ״הוסף למסף הבית״ תיצור קיצור דרך לפרוייקט במסך הבית של האייפון.
               </li> -->
             </ul>
-            <h6>טכנלוגיות</h6>
+            <h6 class="technologies"></h6>
             <ul>
-              <li>HTML5, CSS3, Bootstrap, Parallax scrolling, Collapser, progress bar.</li>
-              <li>Dynamic page layouts, <b>S</b>ingle <b>P</b>age <b>A</b>pplication foundations, </li>
-              <li>JavaScript, jQuery, Ajax (RESTful API), Callbacks, JSON</li>
+              <li id="cryptoniteLine5"></li>
+              <li id="cryptoniteLine6"></li>
+              <li id="cryptoniteLine7"></li>
             </ul>
 
           </div>
@@ -73,7 +79,7 @@
                 <a href="./project-2-Cryptonite/index.html" class="btn btn-primary btn-block">View project</a>
               </div>
               <div class="col">
-                <a href="https://github.com/AvshalomS/Cryptonite" class="btn btn-info btn-block">GitHub</a>
+                <a href="https://github.com/AvshalomS/Cryptonite" class="btn btn-info btn-block">GitHub reop</a>
               </div>
             </div>
           </div>
@@ -83,17 +89,16 @@
       <!-- Card project 1 -->
       <div class="col mb-4">
         <div class="card text-white  h-100 cardBackground">
-          <!--  <div class="card-header">Taskboard</div> -->
-          <div class="card-header text-center">לוח משימות</div>
-          <div class="card-body rigthToLeft textRight">
-            <h5 class="card-title text-center"> לוח המשימות HTML5, CSS3, JavaScript</h5>
+          <div class="card-header text-center" id="taskBoardHeader"></div>
+          <div class="card-body textDirection">
+            <h5 class="card-title text-center" id="taskBoardTitle"></h5>
 
-            <h6 class="card-title">אודות הפרוייקט</h6>
+            <h6 class="card-title about"></h6>
             <ul>
-              <li>בפרוייקט זה ניתן להוסיף משימות פשוטות ללוח.</li>
-              <li>כל משימה מכילה תיאור וזמן יעד לביצוע.</li>
-              <li> המשתמש ימלא את פרטי המשימה בטופס, ולאחר לחיצה על לחצן הוספה, המשימה תתוסף אל לוח המשימות.</li>
-              <li> המשימות נשמרות ב Local Storage של הדפדפן בפורמט JSON.</li>
+              <li id="taskBoardLine1"></li>
+              <li id="taskBoardLine2"></li>
+              <li id="taskBoardLine3"></li>
+              <li id="taskBoardLine4"></li>
               <!-- <li><b>דפדפן כרום:</b> לחיצה על שלושת הנקודות <small>(צד שמאל למעלה)</small> בחירת כלים נוספים, יצירת מקש
                 קיצור - תיצור קיצור דרך
                 לפרוייקט על שולחן העבודה במחשב <small>(או מסך הבית בטלפון)</small>.</li>
@@ -102,11 +107,11 @@
               </li> -->
             </ul>
 
-            <h6>טכנלוגיות</h6>
+            <h6 class="technologies"></h6>
             <ul>
-              <li>HTML5, CSS3, Bootstrap.</li>
-              <li>ביצוע DOM Manipulations.</li>
-              <li>שימוש ב JSON, Glyph Icon, Fade-In, hover.</li>
+              <li id="taskBoardLine5"></li>
+              <li id="taskBoardLine6"></li>
+              <li id="taskBoardLine7"></li>
             </ul>
 
           </div>
@@ -116,31 +121,19 @@
                 <a href="./project-1-Taskboard/index.html" class="btn btn-primary btn-block">View project</a>
               </div>
               <div class="col">
-                <a href="https://github.com/AvshalomS/TaskBoard" class="btn btn-info btn-block">GitHub</a>
+                <a href="https://github.com/AvshalomS/TaskBoard" class="btn btn-info btn-block">GitHub repo</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Card project 3 -->
-      <!-- <div class="col mb-4">
-        <div class="card text-white  h-100" style="background-color: #81d4fa;">
-          <div class="card-header">project 3</div>
-          <div class="card-body">
-            <h5 class="card-title">project 3</h5>
-            <a href="./project-1-Taskboard/index.html" class="btn btn-primary">View project</a>
-            <br>
-            <a href="./project-1-Taskboard/index.html">Go GitHub</a>
-          </div>
-          <div class="card-footer text-muted text-center">
-            Avshalom
-          </div>
-        </div>
-      </div> -->
+      </div>
 
     </div>
   </div>
+
+  <!-- Localization system -->
+  <script src="./localization.js"></script>
 
 </body>
 

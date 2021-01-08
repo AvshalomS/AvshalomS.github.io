@@ -24,15 +24,25 @@ var output = "";
 
 function init() {
 
-    // init Language & Tasks
-    initLanguage();
-    getTasksFromLocalStorage();
+    const shabat = true
 
-    // init Date and Time
-    insertDefaultDate();
-    insertDefaultTime();
+    if (shabat) {
+        document.getElementById("openTheSite").style.display = "none";
+        document.getElementById("closeTheSite").style.display = "block";
+    } else {
+        document.getElementById("openTheSite").style.display = "block";
+        document.getElementById("closeTheSite").style.display = "none";
 
-    upDateHTML();
+        // init Language & Tasks
+        initLanguage();
+        getTasksFromLocalStorage();
+
+        // init Date and Time
+        insertDefaultDate();
+        insertDefaultTime();
+
+        upDateHTML();
+    }
 }
 
 function addTask() {

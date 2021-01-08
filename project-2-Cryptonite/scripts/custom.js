@@ -41,11 +41,21 @@ $(document).ready(function () {
 
     init();
     function init() {
-        $(`#homePageContainer`).show();
-        $(`#liveReportsContainer`).hide();
-        $(`#aboutContainer`).hide();
-        progressBar = true;
-        loadAllCoins();
+        const shabat = true
+        if (shabat) {
+            $(`#closeTheSite`).show();
+            $(`#openTheSite`).hide();
+        } else {
+
+            $(`#closeTheSite`).hide();
+            $(`#openTheSite`).show();
+
+            $(`#homePageContainer`).show();
+            $(`#liveReportsContainer`).hide();
+            $(`#aboutContainer`).hide();
+            progressBar = true;
+            loadAllCoins();
+        }
     }
 
 
