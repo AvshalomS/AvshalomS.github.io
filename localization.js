@@ -9,7 +9,7 @@
 // Core Functions ---------------------------------------------------------------------------------------
 async function initLanguage() {
     const LanguageFromLocalStorage = getLanguageFromLocalStorage();
-    await LanguageFromLocalStorage !== [] ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "Hebrew";
+    LanguageFromLocalStorage.length ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "English";
     changeLanguage()
 }
 function changeLanguage() {
