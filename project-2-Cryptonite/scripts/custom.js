@@ -41,7 +41,7 @@ $(document).ready(function () {
 
     init();
     function init() {
-        const shabat = true
+        const shabat = false
         if (shabat) {
             $(`#closeTheSite`).show();
             $(`#openTheSite`).hide();

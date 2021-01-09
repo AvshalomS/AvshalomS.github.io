@@ -24,7 +24,7 @@ var output = "";
 
 function init() {
 
-    const shabat = true
+    const shabat = false
 
     if (shabat) {
         document.getElementById("openTheSite").style.display = "none";
