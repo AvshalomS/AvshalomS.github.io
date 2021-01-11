@@ -24,25 +24,15 @@ var output = "";
 
 function init() {
 
-    const shabat = false
+    // init Language & Tasks
+    initLanguage();
+    getTasksFromLocalStorage();
 
-    if (shabat) {
-        document.getElementById("openTheSite").style.display = "none";
-        document.getElementById("closeTheSite").style.display = "block";
-    } else {
-        document.getElementById("openTheSite").style.display = "block";
-        document.getElementById("closeTheSite").style.display = "none";
+    // init Date and Time
+    insertDefaultDate();
+    insertDefaultTime();
 
-        // init Language & Tasks
-        initLanguage();
-        getTasksFromLocalStorage();
-
-        // init Date and Time
-        insertDefaultDate();
-        insertDefaultTime();
-
-        upDateHTML();
-    }
+    upDateHTML();
 }
 
 function addTask() {
@@ -162,23 +152,28 @@ function pad(str, max) {
 
 // End ------------------------------------------------------------------------------------------------- 
 
-async function initLanguage() {
+
+// Localization ----------------------------------------------------------------------------------------
+function initLanguage() {
     const LanguageFromLocalStorage = getLanguageFromLocalStorage();
-    await LanguageFromLocalStorage !== [] ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "Hebrew";
+    LanguageFromLocalStorage.length ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "English";
     changeLanguage()
 }
-
 
 function changeLanguage() {
 
     const len = document.getElementById("htmlLanguage").value
-    document.getElementsByClassName("myTaskBoard")[0].innerText = dictionary[len]['myTaskBoard']
-    document.getElementsByClassName("myTaskBoard")[1].innerText = dictionary[len]['myTaskBoard']
+
+    document.querySelectorAll('.myTaskBoard').forEach((element) => {
+        element.innerText = dictionary[len]['myTaskBoard']
+    });
+
     document.getElementById("chooseLanguage").innerText = dictionary[len]['chooseLanguage']
     document.getElementById("backToAvshalomsProjects").innerText = dictionary[len]['backToAvshalomsProjects']
     document.getElementById("myTaskTitle").setAttribute("placeholder", `${dictionary[len]['taskTitle']}`)
     document.getElementById("addTaskBtn").innerText = dictionary[len]['addTaskBtn']
     document.getElementById("resetTaskBtn").innerText = dictionary[len]['resetTaskBtn']
+
     setLanguageToLocalStorage(len)
 
 }

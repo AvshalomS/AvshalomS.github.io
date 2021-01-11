@@ -91,7 +91,7 @@ const dictionary = {
         // Cryptonite project
         cryptoniteHeader: "מטבעות וירטואליים",
         cryptoniteTitle: "מטבעות וירטואליים jQuery-AJAX RESTful API",
-        cryptoniteLine1: "מטרת הפרויקט להנגיש מידע מעולם הסחר הווירטואלי.",
+        cryptoniteLine1: "מטרת הפרויקט להנגיש מידע מעולם הסחר הווירטואלי (ביטקוין וכו׳).",
         cryptoniteLine2: `<b>דף הבית</b> מכיל כרטיסי מידע על מטבעות וירטואליים <small>(בלחיצה על <b>"מידע נוסף"</b> תתבצע קריאה חדשה לקבלת מידע מהשרת רק אם עברו יותר משתי דקות מהקריאה האחרונה)</small>.`,
         cryptoniteLine3: `<b>לחיצה על כפתור <em>"גרף"</em></b> תוסיף את המטבע לדוחות זמן אמת <small>(ניתן לבחור עד 5 מטבעות)</small>.`,
         cryptoniteLine4: `<b>מסך <em>"דוחות זמן אמת" </em></b> מכיל גרף זמן אמת של שערי המטבעות שנבחרו.`,
@@ -122,7 +122,7 @@ const dictionary = {
         // Cryptonite project
         cryptoniteHeader: "Cryptonite",
         cryptoniteTitle: "Cryptonite - JQuery-AJAX RESTful API",
-        cryptoniteLine1: "The goal of the project is to access information from the world of virtual commerce.",
+        cryptoniteLine1: "The goal of the project is to access information from the world of virtual commerce (Bitcoin etc).",
         cryptoniteLine2: `<b>The home page</b> contains information cards about virtual currencies <small>(clicking  <b>"More info"</b> will make a new call for information from the server, only if more than two minutes have passed since the last call)</small>.`,
         cryptoniteLine3: `<b>Clicking the <em>"Chart button"</em></b> will add the currency to real-time reports,  <small>(up to 5 currencies can be selected)</small>.`,
         cryptoniteLine4: `<b>The <em>"Live Report screen" </em></b> contains a graph of real-time selected currency rates.`,
