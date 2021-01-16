@@ -122,7 +122,7 @@ const dictionary = {
         // Cryptonite project
         cryptoniteHeader: "Cryptonite",
         cryptoniteTitle: "Cryptonite - JQuery-AJAX RESTful API",
-        cryptoniteLine1: "The goal of the project is to access information from the world of virtual commerce (Bitcoin etc).",
+        cryptoniteLine1: "The goal of the project is to make information from the world of virtual commerce accessible (Bitcoin etc).",
         cryptoniteLine2: `<b>The home page</b> contains information cards about virtual currencies <small>(clicking  <b>"More info"</b> will make a new call for information from the server, only if more than two minutes have passed since the last call)</small>.`,
         cryptoniteLine3: `<b>Clicking the <em>"Chart button"</em></b> will add the currency to real-time reports,  <small>(up to 5 currencies can be selected)</small>.`,
         cryptoniteLine4: `<b>The <em>"Live Report screen" </em></b> contains a graph of real-time selected currency rates.`,
@@ -134,7 +134,7 @@ const dictionary = {
         taskBoardHeader: "Task Board ",
         taskBoardTitle: "Task Board - HTML5, CSS3, JavaScript",
         taskBoardLine1: "In this project you can add simple tasks to the board.",
-        taskBoardLine2: "Each task contains a description and time.",
+        taskBoardLine2: "Each task contains a description and target time for its completion.",
         taskBoardLine3: "The user will fill the task details in the form, and after clicking the Add button, the task will be added to the board.",
         taskBoardLine4: "Tasks are stored in the browser's “Local Storage” in “JSON” format.",
         taskBoardLine5: "HTML5, CSS3, Bootstrap.",
