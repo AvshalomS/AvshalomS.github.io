@@ -17,7 +17,7 @@
     <!-- Custom javaScript -->
     <script src="scripts/custom.js"></script>
 
-    <title>Cryptonite</title>
+    <title class="title">Cryptonite</title>
 
 </head>
 
@@ -28,8 +28,8 @@
 
         <div class="jumbotron text-left">
 
-            <p class="text-center">Shahar Avshlom</p>
-            <h1>Cryptonite</h1>
+            <p class="text-center" id="projectCreator">Shahar Avshlom</p>
+            <h1 class="title">Cryptonite</h1>
 
         </div>
     </div>
@@ -49,8 +49,9 @@
             </div>
             <!-- In this line we will make sure the page does not refresh -->
             <form class="form-inline ml-auto" onsubmit="return false">
-                <input type="text" class="form-control mr-sm-2" id="searchInput" placeholder="Search">
-                <a href="https://avshaloms.github.io" class="btn btn-outline-primary mr-sm-2">Back to Avshalom's
+                <input type="text" class="form-control mr-sm-2" id="search" placeholder="Search">
+                <a href="https://avshaloms.github.io" class="btn btn-outline-primary mr-sm-2"
+                    id="backToAvshalomsProjects">Back to Avshalom's
                     projects</a>
                 <select class="custom-select" name="language" id="htmlLanguage" onchange="changeLanguage()">
                     <option value="English">English</option>
@@ -126,7 +127,7 @@
                             selected
                             currency rates.</li>
                     </ul>
-                    <h6 class="technologies">Technologies</h6>
+                    <!-- <h6 class="technologies">Technologies</h6>
                     <ul>
                         <li id="cryptoniteLine5">HTML5, CSS3, Bootstrap, Parallax scrolling, Collapser, progress bar.
                         </li>
@@ -134,7 +135,7 @@
                             foundations.
                         </li>
                         <li id="cryptoniteLine7">JavaScript, jQuery, Ajax (RESTful API), Callbacks, JSON.</li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>

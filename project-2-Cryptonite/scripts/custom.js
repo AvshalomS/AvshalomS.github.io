@@ -665,15 +665,20 @@ function changeLanguage() {
 
 
     // Cryptonite project --------------------------------------------------------------------------------
-    document.getElementById("cryptoniteHeader").innerText = dictionary[len]['cryptoniteHeader']
-    document.getElementById("cryptoniteTitle").innerText = dictionary[len]['cryptoniteTitle']
+    document.getElementById("projectCreator").innerText = dictionary[len]['projectCreator']
+    document.getElementById("backToAvshalomsProjects").innerText = dictionary[len]['backToAvshalomsProjects']
+    // document.getElementById("cryptoniteHeader").innerText = dictionary[len]['cryptoniteHeader']
+    document.getElementById("home").innerText = dictionary[len]['home']
+    document.getElementById("liveReports").innerText = dictionary[len]['liveReports']
+    document.getElementById("about").innerText = dictionary[len]['about']
+    document.getElementById("search").setAttribute("placeholder", `${dictionary[len]['search']}`)
     document.getElementById("cryptoniteLine1").innerText = dictionary[len]['cryptoniteLine1']
     document.getElementById("cryptoniteLine2").innerHTML = dictionary[len]['cryptoniteLine2']
     document.getElementById("cryptoniteLine3").innerHTML = dictionary[len]['cryptoniteLine3']
     document.getElementById("cryptoniteLine4").innerHTML = dictionary[len]['cryptoniteLine4']
-    document.getElementById("cryptoniteLine5").innerText = dictionary[len]['cryptoniteLine5']
-    document.getElementById("cryptoniteLine6").innerHTML = dictionary[len]['cryptoniteLine6']
-    document.getElementById("cryptoniteLine7").innerText = dictionary[len]['cryptoniteLine7']
+    // document.getElementById("cryptoniteLine5").innerText = dictionary[len]['cryptoniteLine5']
+    // document.getElementById("cryptoniteLine6").innerHTML = dictionary[len]['cryptoniteLine6']
+    // document.getElementById("cryptoniteLine7").innerText = dictionary[len]['cryptoniteLine7']
 
     setLanguageToLocalStorage(len)
 }
@@ -693,9 +698,14 @@ function setLanguageToLocalStorage(language) {
 const dictionary = {
     Hebrew: {
         // General --------------------------------------------------------------------------------------
-        title: "הפרוייקטים של אבשלום",
+        title: "מטבעות וירטואלים",
+        projectCreator: "שחר אבשלום",
         chooseLanguage: "בחר שפה",
+        backToAvshalomsProjects: "חזור לפרויקטים של אבשלום",
+        home: "דף הבית",
+        liveReports: "גרף זמן אמת",
         about: "אודות הפרוייקט",
+        search: "חיפוש",
         viewProject: "הצג פרוייקט",
         technologies: "טכנולוגיות",
         // Projects -------------------------------------------------------------------------------------
@@ -713,9 +723,14 @@ const dictionary = {
     },
     English: {
         // General --------------------------------------------------------------------------------------
-        title: "Avshalom's projects",
+        title: "Cryptonite",
+        projectCreator: "Shahar Avshlom",
         chooseLanguage: "Choose a language:",
+        backToAvshalomsProjects: "Back to Avshalom's projects",
+        home: "Home",
+        liveReports: "Live Reports",
         about: "About the project",
+        search: "Search",
         technologies: "Technologies",
         viewProject: "View project",
         // Projects -------------------------------------------------------------------------------------
@@ -726,7 +741,7 @@ const dictionary = {
         cryptoniteLine1: "The goal of the project is to access information from the world of virtual commerce (Bitcoin etc).",
         cryptoniteLine2: `<b>The home page</b> contains information cards about virtual currencies <small>(clicking  <b>"More info"</b> will make a new call for information from the server, only if more than two minutes have passed since the last call)</small>.`,
         cryptoniteLine3: `<b>Clicking the <em>"Chart button"</em></b> will add the currency to real-time reports,  <small>(up to 5 currencies can be selected)</small>.`,
-        cryptoniteLine4: `<b>The <em>"Live Report screen" </em></b> contains a graph of real-time selected currency rates.`,
+        cryptoniteLine4: `<b>The <em>"Live Reports screen" </em></b> contains a graph of real-time selected currency rates.`,
         cryptoniteLine5: "HTML5, CSS3, Bootstrap, Parallax scrolling, Collapser, progress bar.",
         cryptoniteLine6: `Dynamic page layouts, <b>S</b>ingle <b>P</b>age <b>A</b>pplication foundations. `,
         cryptoniteLine7: "JavaScript, jQuery, Ajax (RESTful API), Callbacks, JSON.",
