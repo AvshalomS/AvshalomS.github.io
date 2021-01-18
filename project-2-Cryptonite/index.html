@@ -17,11 +17,11 @@
     <!-- Custom javaScript -->
     <script src="scripts/custom.js"></script>
 
-    <title class="title">Cryptonite</title>
+    <title class="title textDirection">Cryptonite</title>
 
 </head>
 
-<body class="parallax">
+<body class="parallax" onload="initLanguage()">
 
     <!-- Jumbotron -->
     <div class="container" id="jumbotron">
@@ -29,7 +29,7 @@
         <div class="jumbotron text-left">
 
             <p class="text-center" id="projectCreator">Shahar Avshlom</p>
-            <h1 class="title">Cryptonite</h1>
+            <h1 class="title textDirection">Cryptonite</h1>
 
         </div>
     </div>
@@ -45,11 +45,11 @@
             <div class="navbar-nav">
                 <a href="#" class="nav-item nav-link" id="home">Home</a>
                 <a href="#" class="nav-item nav-link" id="liveReports">Live Reports</a>
-                <a href="#" class="nav-item nav-link" id="about">About</a>
+                <a href="#" class="nav-item nav-link about" id="about">About</a>
             </div>
             <!-- In this line we will make sure the page does not refresh -->
             <form class="form-inline ml-auto" onsubmit="return false">
-                <input type="text" class="form-control mr-sm-2" id="search" placeholder="Search">
+                <input type="text" class="form-control mr-sm-2" id="searchInput" placeholder="Search">
                 <a href="https://avshaloms.github.io" class="btn btn-outline-primary mr-sm-2"
                     id="backToAvshalomsProjects">Back to Avshalom's
                     projects</a>
@@ -73,7 +73,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <h5 class="modal-title text-center" id="removeCoins" style="width: 100%;">Remove coins</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="btnModalCancel">Cancel</button>
+                    <button type="button" class="btn btn-secondary closeBtn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary cancelBtn" id="btnModalCancel">Cancel</button>
                 </div>
             </div>
         </div>
@@ -100,15 +100,17 @@
 
     <!-- About -->
     <div class="container" id="aboutContainer">
-        <div class="row">
+        <div class="row textDirection">
             <div class="col-xl-9 col-lg-10 mx-auto">
                 <div class="bg-faded rounded p-5">
                     <img class="img-fluid rounded-circle rounded mx-auto d-block img-thumbnail"
                         src="images/backgroundWait/boulder-daylight-landscape-128328.jpg" alt="Chania" width="460"
                         height="345">
                     <h2 class="section-heading mb-4">
-                        <span class="section-heading-lower">About the project</span>
-                        <span class="section-heading-upper">Cryptonite - JQuery-AJAX RESTful API, Shahar Avshalom</span>
+                        <span class="section-heading-lower about">About the project</span>
+                        <span class="section-heading-upper" id="cryptoniteTitle">Cryptonite - JQuery-AJAX RESTful API,
+                            Shahar
+                            Avshalom</span>
                     </h2>
 
                     <ul>

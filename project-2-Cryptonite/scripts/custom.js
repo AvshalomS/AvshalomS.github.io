@@ -344,14 +344,15 @@ $(document).ready(function () {
     // HTML Functions -----------------------------------------------------------------------------------
     function insertHTMLToToggleModal() {
 
-        $(`#modalTitle`).text(`Remove coins`);
+        // $(`#modalTitle`).text(`Remove coins`);
+        const len = document.getElementById("htmlLanguage").value
         $(`#modalBody`).html(``);
         chartSymbols.forEach(symbol => {
             $(`#modalBody`).append(`
                 
                 <div class="custom-control custom-switch toggleChart">
                     <input type="checkbox" class="custom-control-input" id="${`_` + symbol}">
-                    <label class="custom-control-label" for="${`_` + symbol}">Select to remove</label>
+                    <label class="custom-control-label selectToRemove" for="${`_` + symbol}">${dictionary[len]['selectToRemove']}</label>
                 </div>
 
                 <p class="card-text">${symbol}</p>
@@ -436,6 +437,7 @@ $(document).ready(function () {
     // Canvasjs Charts Function ------------------------------------------------------------------------
     function showReports() {
 
+        const len = document.getElementById("htmlLanguage").value
 
         var dataPoints1 = [];
         var dataPoints2 = [];
@@ -449,7 +451,7 @@ $(document).ready(function () {
                 text: "Chart title"
             },
             axisX: {
-                title: "chart updates every 2 secs"
+                title: dictionary[len]['chartUpdates']
             },
             axisY: {
                 suffix: "$",
@@ -630,7 +632,7 @@ function setCoinsToLocalStorage() {
 // End ------------------------------------------------------------------------------------------------- 
 
 // Localization ----------------------------------------------------------------------------------------
-async function initLanguage() {
+function initLanguage() {
     const LanguageFromLocalStorage = getLanguageFromLocalStorage();
     LanguageFromLocalStorage.length ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "English";
     changeLanguage()
@@ -650,6 +652,12 @@ function changeLanguage() {
     document.querySelectorAll('.about').forEach((element) => {
         element.innerText = dictionary[len]['about']
     });
+    document.querySelectorAll('.closeBtn').forEach((element) => {
+        element.innerText = dictionary[len]['closeBtn']
+    });
+    document.querySelectorAll('.cancelBtn').forEach((element) => {
+        element.innerText = dictionary[len]['cancelBtn']
+    });
     document.querySelectorAll('.technologies').forEach((element) => {
         element.innerText = dictionary[len]['technologies']
     });
@@ -667,22 +675,18 @@ function changeLanguage() {
     // Cryptonite project --------------------------------------------------------------------------------
     document.getElementById("projectCreator").innerText = dictionary[len]['projectCreator']
     document.getElementById("backToAvshalomsProjects").innerText = dictionary[len]['backToAvshalomsProjects']
-    // document.getElementById("cryptoniteHeader").innerText = dictionary[len]['cryptoniteHeader']
     document.getElementById("home").innerText = dictionary[len]['home']
     document.getElementById("liveReports").innerText = dictionary[len]['liveReports']
-    document.getElementById("about").innerText = dictionary[len]['about']
-    document.getElementById("search").setAttribute("placeholder", `${dictionary[len]['search']}`)
+    document.getElementById("cryptoniteTitle").innerText = dictionary[len]['cryptoniteTitle']
+    document.getElementById("searchInput").setAttribute("placeholder", `${dictionary[len]['searchInput']}`)
     document.getElementById("cryptoniteLine1").innerText = dictionary[len]['cryptoniteLine1']
     document.getElementById("cryptoniteLine2").innerHTML = dictionary[len]['cryptoniteLine2']
     document.getElementById("cryptoniteLine3").innerHTML = dictionary[len]['cryptoniteLine3']
     document.getElementById("cryptoniteLine4").innerHTML = dictionary[len]['cryptoniteLine4']
-    // document.getElementById("cryptoniteLine5").innerText = dictionary[len]['cryptoniteLine5']
-    // document.getElementById("cryptoniteLine6").innerHTML = dictionary[len]['cryptoniteLine6']
-    // document.getElementById("cryptoniteLine7").innerText = dictionary[len]['cryptoniteLine7']
+    document.getElementById("removeCoins").innerText = dictionary[len]['removeCoins']
 
     setLanguageToLocalStorage(len)
 }
-
 
 // Local Storage Functions ----------------------------------------------------------------------------- 
 function getLanguageFromLocalStorage() {
@@ -698,14 +702,17 @@ function setLanguageToLocalStorage(language) {
 const dictionary = {
     Hebrew: {
         // General --------------------------------------------------------------------------------------
+        closeBtn: "סגירה",
+        cancelBtn: "ביטול",
         title: "מטבעות וירטואלים",
         projectCreator: "שחר אבשלום",
         chooseLanguage: "בחר שפה",
         backToAvshalomsProjects: "חזור לפרויקטים של אבשלום",
         home: "דף הבית",
         liveReports: "גרף זמן אמת",
+        chartUpdates: "הגרף מתעדכן כל 2 שניות",
         about: "אודות הפרוייקט",
-        search: "חיפוש",
+        searchInput: "חיפוש",
         viewProject: "הצג פרוייקט",
         technologies: "טכנולוגיות",
         // Projects -------------------------------------------------------------------------------------
@@ -714,23 +721,28 @@ const dictionary = {
         cryptoniteHeader: "מטבעות וירטואליים",
         cryptoniteTitle: "מטבעות וירטואליים jQuery-AJAX RESTful API",
         cryptoniteLine1: "מטרת הפרויקט להנגיש מידע מעולם הסחר הווירטואלי (ביטקוין וכו׳).",
-        cryptoniteLine2: `<b>דף הבית</b> מכיל כרטיסי מידע על מטבעות וירטואליים <small>(בלחיצה על <b>"מידע נוסף"</b> תתבצע קריאה חדשה לקבלת מידע מהשרת רק אם עברו יותר משתי דקות מהקריאה האחרונה)</small>.`,
-        cryptoniteLine3: `<b>לחיצה על כפתור <em>"גרף"</em></b> תוסיף את המטבע לדוחות זמן אמת <small>(ניתן לבחור עד 5 מטבעות)</small>.`,
-        cryptoniteLine4: `<b>מסך <em>"דוחות זמן אמת" </em></b> מכיל גרף זמן אמת של שערי המטבעות שנבחרו.`,
+        cryptoniteLine2: `<b>דף הבית</b> מכיל כרטיסי מידע על מטבעות וירטואליים <small>(בלחיצה על <b>"More info"</b> תתבצע קריאה חדשה לקבלת מידע מהשרת רק אם עברו יותר משתי דקות מהקריאה האחרונה)</small>.`,
+        cryptoniteLine3: `<b>לחיצה על כפתור <em>"Chart"</em></b> תוסיף את המטבע לדוחות זמן אמת <small>(ניתן לבחור עד 5 מטבעות)</small>.`,
+        cryptoniteLine4: `<b>מסך <em>"גרף זמן אמת" </em></b> מכיל גרף זמן אמת של שערי המטבעות שנבחרו.`,
         cryptoniteLine5: "HTML5, CSS3, Bootstrap, Parallax scrolling, Collapser, progress bar.",
         cryptoniteLine6: `Dynamic page layouts, <b>S</b>ingle <b>P</b>age <b>A</b>pplication foundations. `,
         cryptoniteLine7: "JavaScript, jQuery, Ajax (RESTful API), Callbacks, JSON.",
+        removeCoins: "הסרת מטבעות",
+        selectToRemove: "בחר להסרה",
     },
     English: {
         // General --------------------------------------------------------------------------------------
+        closeBtn: "Close",
+        cancelBtn: "Cancel",
         title: "Cryptonite",
         projectCreator: "Shahar Avshlom",
         chooseLanguage: "Choose a language:",
         backToAvshalomsProjects: "Back to Avshalom's projects",
         home: "Home",
         liveReports: "Live Reports",
+        chartUpdates: "chart updates every 2 secs",
         about: "About the project",
-        search: "Search",
+        searchInput: "Search",
         technologies: "Technologies",
         viewProject: "View project",
         // Projects -------------------------------------------------------------------------------------
@@ -738,13 +750,15 @@ const dictionary = {
         // Cryptonite project
         cryptoniteHeader: "Cryptonite",
         cryptoniteTitle: "Cryptonite - JQuery-AJAX RESTful API",
-        cryptoniteLine1: "The goal of the project is to access information from the world of virtual commerce (Bitcoin etc).",
+        cryptoniteLine1: "The goal of the project is to make information from the world of virtual commerce accessible (Bitcoin etc).",
         cryptoniteLine2: `<b>The home page</b> contains information cards about virtual currencies <small>(clicking  <b>"More info"</b> will make a new call for information from the server, only if more than two minutes have passed since the last call)</small>.`,
         cryptoniteLine3: `<b>Clicking the <em>"Chart button"</em></b> will add the currency to real-time reports,  <small>(up to 5 currencies can be selected)</small>.`,
         cryptoniteLine4: `<b>The <em>"Live Reports screen" </em></b> contains a graph of real-time selected currency rates.`,
         cryptoniteLine5: "HTML5, CSS3, Bootstrap, Parallax scrolling, Collapser, progress bar.",
         cryptoniteLine6: `Dynamic page layouts, <b>S</b>ingle <b>P</b>age <b>A</b>pplication foundations. `,
         cryptoniteLine7: "JavaScript, jQuery, Ajax (RESTful API), Callbacks, JSON.",
+        removeCoins: "Remove coins",
+        selectToRemove: "Select to remove",
     }
 }
 
