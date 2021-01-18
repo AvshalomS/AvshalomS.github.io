@@ -7,10 +7,22 @@
 
 
 // Core Functions ---------------------------------------------------------------------------------------
-async function initLanguage() {
+function initLanguage() {
     const LanguageFromLocalStorage = getLanguageFromLocalStorage();
     LanguageFromLocalStorage.length ? document.getElementById("htmlLanguage").value = LanguageFromLocalStorage : document.getElementById("htmlLanguage").value = "English";
     changeLanguage()
+}
+function updateLocalStorage(projectLocalStorage) {
+    const len = document.getElementById("htmlLanguage").value
+    localStorage.setItem(projectLocalStorage, JSON.stringify(len))
+
+    // 
+    // 
+    // function setLanguageToLocalStorage(language) {
+    //     jsonToSave = JSON.stringify(language);
+    //     localStorage.setItem("avshalomsProjectsSiteLanguage", jsonToSave);
+    // }
+    // 
 }
 function changeLanguage() {
     const len = document.getElementById("htmlLanguage").value
@@ -29,6 +41,9 @@ function changeLanguage() {
     });
     document.querySelectorAll('.technologies').forEach((element) => {
         element.innerText = dictionary[len]['technologies']
+    });
+    document.querySelectorAll('.viewProject').forEach((element) => {
+        element.innerText = dictionary[len]['viewProject']
     });
     document.querySelectorAll('.textDirection').forEach((element) => {
         if (len === "Hebrew") {
@@ -92,9 +107,9 @@ const dictionary = {
         cryptoniteHeader: "מטבעות וירטואליים",
         cryptoniteTitle: "מטבעות וירטואליים jQuery-AJAX RESTful API",
         cryptoniteLine1: "מטרת הפרויקט להנגיש מידע מעולם הסחר הווירטואלי (ביטקוין וכו׳).",
-        cryptoniteLine2: `<b>דף הבית</b> מכיל כרטיסי מידע על מטבעות וירטואליים <small>(בלחיצה על <b>"מידע נוסף"</b> תתבצע קריאה חדשה לקבלת מידע מהשרת רק אם עברו יותר משתי דקות מהקריאה האחרונה)</small>.`,
-        cryptoniteLine3: `<b>לחיצה על כפתור <em>"גרף"</em></b> תוסיף את המטבע לדוחות זמן אמת <small>(ניתן לבחור עד 5 מטבעות)</small>.`,
-        cryptoniteLine4: `<b>מסך <em>"דוחות זמן אמת" </em></b> מכיל גרף זמן אמת של שערי המטבעות שנבחרו.`,
+        cryptoniteLine2: `<b>דף הבית</b> מכיל כרטיסי מידע על מטבעות וירטואליים <small>(בלחיצה על <b>"More info"</b> תתבצע קריאה חדשה לקבלת מידע מהשרת רק אם עברו יותר משתי דקות מהקריאה האחרונה)</small>.`,
+        cryptoniteLine3: `<b>לחיצה על כפתור <em>"Chart"</em></b> תוסיף את המטבע לדוחות זמן אמת <small>(ניתן לבחור עד 5 מטבעות)</small>.`,
+        cryptoniteLine4: `<b>מסך <em>"גרף זמן אמת" </em></b> מכיל גרף זמן אמת של שערי המטבעות שנבחרו.`,
         cryptoniteLine5: "HTML5, CSS3, Bootstrap, Parallax scrolling, Collapser, progress bar.",
         cryptoniteLine6: `Dynamic page layouts, <b>S</b>ingle <b>P</b>age <b>A</b>pplication foundations. `,
         cryptoniteLine7: "JavaScript, jQuery, Ajax (RESTful API), Callbacks, JSON.",
