@@ -56,6 +56,17 @@ function changeLanguage() {
     });
 
 
+    // A virtual store for food project --------------------------------------------------------------------------------
+    document.getElementById("storeHeader").innerText = dictionary[len]['storeHeader']
+    document.getElementById("storeTitle").innerText = dictionary[len]['storeTitle']
+    document.getElementById("storeLine1").innerText = dictionary[len]['storeLine1']
+    document.getElementById("storeLine2").innerHTML = dictionary[len]['storeLine2']
+    document.getElementById("storeLine3").innerHTML = dictionary[len]['storeLine3']
+    document.getElementById("storeLine4").innerHTML = dictionary[len]['storeLine4']
+    document.getElementById("storeLine5").innerText = dictionary[len]['storeLine5']
+    document.getElementById("storeLine6").innerHTML = dictionary[len]['storeLine6']
+    document.getElementById("storeLine7").innerText = dictionary[len]['storeLine7']
+
     // Cryptonite project --------------------------------------------------------------------------------
     document.getElementById("cryptoniteHeader").innerText = dictionary[len]['cryptoniteHeader']
     document.getElementById("cryptoniteTitle").innerText = dictionary[len]['cryptoniteTitle']
@@ -103,6 +114,17 @@ const dictionary = {
         technologies: "טכנולוגיות",
         // Projects -------------------------------------------------------------------------------------
 
+        // A virtual store for food project
+        storeHeader: "חנות לממכר מזון ומוצרי מכולת שונים",
+        storeTitle: "מרכול וירטואלי - Node.Js-Angular-MongoDB",
+        storeLine1: "במערכת קיימות שתי הרשאות: מנהל המערכת - אחראי לניהול שוטף של המערכת, הוספת מוצרים או עריכת מוצרים.",
+        storeLine2: `לקוח – יבצע הרשמה, חיפוש, בחירת מוצרים, שמירת עגלה וביצוע הזמנה.`,
+        storeLine3: `כמו כן יופיעו בדף הבית כמות ההזמנות שבוצעו באתר וכמות המוצרים הזמינים באתר.`,
+        storeLine4: `חיפוש יתבצע ONTYPE כלומר בכל הקלדה. בעת חיפוש מוצר בקבלה, תוצאות החיפוש ימורקרו.`,
+        storeLine5: "HTML5 Structure, CSS3, Bootstrap design.",
+        storeLine6: `Angular, NodeJS Using express, Restfull App.`,
+        storeLine7: "MongoDB Design & Create Collections, Mongoose.",
+
         // Cryptonite project
         cryptoniteHeader: "מטבעות וירטואליים",
         cryptoniteTitle: "מטבעות וירטואליים jQuery-AJAX RESTful API",
@@ -133,6 +155,17 @@ const dictionary = {
         technologies: "Technologies",
         viewProject: "View project",
         // Projects -------------------------------------------------------------------------------------
+
+        // A virtual store for food project
+        storeHeader: "Virtual supermarket",
+        storeTitle: "Virtual supermarket - Node.Js-Angular-MongoDB",
+        storeLine1: "The system has two permissions, the system administrator is responsible for the day-to-day management of the system, adding products or editing products.",
+        storeLine2: `<b>The home page</b> contains information cards about virtual currencies <small>(clicking  <b>"More info"</b> will make a new call for information from the server, only if more than two minutes have passed since the last call)</small>.`,
+        storeLine3: `<b>Clicking the <em>"Chart button"</em></b> will add the currency to real-time reports,  <small>(up to 5 currencies can be selected)</small>.`,
+        storeLine4: `<b>The <em>"Live Reports screen" </em></b> contains a graph of real-time selected currency rates.`,
+        storeLine5: "HTML5 Structure, CSS3, Bootstrap design.",
+        storeLine6: `Angular, NodeJS Using express, Restfull App.`,
+        storeLine7: "MongoDB Design & Create Collections, Mongoose.",
 
         // Cryptonite project
         cryptoniteHeader: "Cryptonite",
