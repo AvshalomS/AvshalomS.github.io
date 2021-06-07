@@ -55,6 +55,16 @@ function changeLanguage() {
         }
     });
 
+    // Observe vacations project Card ---------------------------------------------------------------------------------
+    document.getElementById("VacationsHeader").innerText = dictionary[len]['VacationsHeader']
+    document.getElementById("VacationsTitle").innerText = dictionary[len]['VacationsTitle']
+    document.getElementById("VacationsLine1").innerText = dictionary[len]['VacationsLine1']
+    document.getElementById("VacationsLine2").innerHTML = dictionary[len]['VacationsLine2']
+    document.getElementById("VacationsLine3").innerHTML = dictionary[len]['VacationsLine3']
+    document.getElementById("VacationsLine4").innerHTML = dictionary[len]['VacationsLine4']
+    document.getElementById("VacationsLine5").innerText = dictionary[len]['VacationsLine5']
+    document.getElementById("VacationsLine6").innerHTML = dictionary[len]['VacationsLine6']
+    document.getElementById("VacationsLine7").innerText = dictionary[len]['VacationsLine7']
 
     // A virtual store for food project --------------------------------------------------------------------------------
     document.getElementById("storeHeader").innerText = dictionary[len]['storeHeader']
@@ -114,6 +124,17 @@ const dictionary = {
         technologies: "טכנולוגיות",
         // Projects -------------------------------------------------------------------------------------
 
+        // Observe vacations project Card
+        VacationsHeader: "מערכת לתיוג חופשות",
+        VacationsTitle: "מערכת לתיוג חופשות - React Nodejs & MySQL",
+        VacationsLine1: "כל משתמש שיכנס למערכת יוכל לצפות בחופשות ולתייג אותן על ידי לחצן follow.",
+        VacationsLine2: `חופשה שמתוייגת, תשתנה בזמן אמת לכלל המשתמשים המחוברים במערכת - (Socket io).`,
+        VacationsLine3: `מנהל המערכת אחראי לניהול שוטף של המערכת, הוספת חופשות, שינוי ומחיקת חופשות.`,
+        VacationsLine4: `כמו כן מנהל המערכת יוכל לצפות בגרף זמן אמת של מספר העוקבים אחר החופשות השונות.`,
+        VacationsLine5: "HTML5 Structure, CSS3, Bootstrap design.",
+        VacationsLine6: `React, Redux thunk, middleware, Container components / service component / router etc.. .`,
+        VacationsLine7: "NodeJS Using express, Restfull App, Socket io, MySql Design & create schema, Queries.",
+
         // A virtual store for food project
         storeHeader: "חנות לממכר מזון ומוצרי מכולת שונים",
         storeTitle: "מרכול וירטואלי - Node.Js-Angular-MongoDB",
@@ -156,13 +177,24 @@ const dictionary = {
         viewProject: "View project",
         // Projects -------------------------------------------------------------------------------------
 
+        // Observe vacations project Card
+        VacationsHeader: "Observe vacations",
+        VacationsTitle: "Observe vacations - React Nodejs & MySQL",
+        VacationsLine1: "Any user who logs in can view the vacations and tag them using the follow button.",
+        VacationsLine2: `Tagged vacation will change in real time for all users connected to the system - (Socket io).`,
+        VacationsLine3: `The system administrator is responsible for the day-to-day management of the system, adding vacations, changing and deleting vacations.`,
+        VacationsLine4: `The system administrator will also be able to display a real-time graph of the number of followers of the various vacations.`,
+        VacationsLine5: "HTML5 Structure, CSS3, Bootstrap design.",
+        VacationsLine6: `React, Redux thunk, middleware, Container components / service component / router etc.. .`,
+        VacationsLine7: "NodeJS Using express, Restfull App, Socket io, MySql Design & create schema, Queries.",
+
         // A virtual store for food project
         storeHeader: "Virtual supermarket",
         storeTitle: "Virtual supermarket - Node.Js-Angular-MongoDB",
         storeLine1: "The system has two permissions, the system administrator is responsible for the day-to-day management of the system, adding products or editing products.",
         storeLine2: `Customer - will register, search/select products, save a cart and place an order.`,
         storeLine3: `The home page will display the amount of orders placed on the site and the amount of products available on the site.`,
-        storeLine4: `A search will be performed ON TYPE ie on each type. When searching for a product on an invoice, the search results will be highlighted.`,
+        storeLine4: `A search will be performed ON TYPE i.e. on each typing. When searching for a product on the receipt , the search results will be highlighted.`,
         storeLine5: "HTML5 Structure, CSS3, Bootstrap design.",
         storeLine6: `Angular, NodeJS Using express, Restfull App.`,
         storeLine7: "MongoDB Design & Create Collections, Mongoose.",
