@@ -177,11 +177,11 @@ const dictionary = {
         viewProject: "View project",
         // Projects -------------------------------------------------------------------------------------
 
-        // Observe vacations project Card
-        VacationsHeader: "Observe vacations",
-        VacationsTitle: "Observe vacations - React Nodejs & MySQL",
+        // Vacations project Card
+        VacationsHeader: "Vacations",
+        VacationsTitle: "Vacations - React Nodejs & MySQL",
         VacationsLine1: "Any user who logs in can view the vacations and tag them using the follow button.",
-        VacationsLine2: `Tagged vacation will change in real time for all users connected to the system - (Socket io).`,
+        VacationsLine2: `A tagged vacation will change in real time for all users connected to the system - (Socket io).`,
         VacationsLine3: `The system administrator is responsible for the day-to-day management of the system, adding vacations, changing and deleting vacations.`,
         VacationsLine4: `The system administrator will also be able to display a real-time graph of the number of followers of the various vacations.`,
         VacationsLine5: "HTML5 Structure, CSS3, Bootstrap design.",
